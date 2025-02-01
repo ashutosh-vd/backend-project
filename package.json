@@ -1,0 +1,18 @@
+{
+  "name": "backend-project",
+  "version": "1.0.0",
+  "description": "# Using fs module.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@ssh.github.com:443/ashutosh-vd/backend-project.git"
+  },
+  "author": "ashutosh-vd",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
