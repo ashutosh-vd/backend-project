@@ -49,18 +49,15 @@
 	  </div>
 
 	  <section class="p-4 flex gap-3 justify-center">
-		<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
-			<p class="block text-2xl">Some Task Here</p>
-			<a class="block text-blue-200">Read More.</a>
-		</div>
-		<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
-			<p class="block text-2xl">Some Task Here</p>
-			<a class="block text-blue-200">Read More.</a>
-		</div>
-		<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
-			<p class="block text-2xl">Some Task Here</p>
-			<a class="block text-blue-200">Read More.</a>
-		</div>
+		<% files.forEach( (elem) => { %>
+			<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
+				<p class="block text-2xl"><%=elem %></p>
+				<a class="block text-blue-200">Read More.</a>
+			</div>
+		<% }) %>
+	  </section>
+	  <section>
+		
 	  </section>
 </body>
 <script src="/javascripts/script.js"></script>
