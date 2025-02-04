@@ -7,10 +7,61 @@
 	<link rel="stylesheet" href="/stylesheets/style.css">
 	<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
-	<h1>
-		Hello bachhon!!! <%=2+2 %>
-	</h1>
+<body class="bg-zinc-900 text-zinc-600 p-5 h-screen">
+	<div 
+	class="flex justify-center items-center">
+		<h1 class="block text-3xl font-semibold">
+			Task List
+		</h1>
+	</div>
+	<section class="mb-12 mx-auto">
+		<form class="space-y-4 p-4" action="/create" method="post">
+		  <div>
+			<label for="title" class="block text-sm font-medium mb-1">Title</label>
+			<input
+			  type="text"
+			  id="title"
+			  placeholder="Enter title"
+			  name="title"
+			  class="w-full p-3 bg-zinc-800 border border-zinc-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+			/>
+		  </div>
+		  <div>
+			<label for="description" class="block text-sm font-medium mb-1">Description</label>
+			<textarea
+			  id="description"
+			  placeholder="Enter description"
+			  rows="4"
+			  name="details"
+			  class="w-full h-12 resize-none p-3 bg-zinc-800 border border-zinc-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500	"
+			></textarea>
+		  </div>
+		  <button
+			type="submit"
+			class="text-white w-full py-3 bg-blue-500 hover:bg-blue-600 rounded font-semibold transition-colors"
+		  >
+			Add Card
+		  </button>
+		</form>
+	  </section>
+	  <div class="flex justify-center">
+		<h4 class="text-2xl text-zinc-600 font-bold">Prev tasks Here</h4>
+	  </div>
+
+	  <section class="p-4 flex gap-3 justify-center">
+		<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
+			<p class="block text-2xl">Some Task Here</p>
+			<a class="block text-blue-200">Read More.</a>
+		</div>
+		<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
+			<p class="block text-2xl">Some Task Here</p>
+			<a class="block text-blue-200">Read More.</a>
+		</div>
+		<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
+			<p class="block text-2xl">Some Task Here</p>
+			<a class="block text-blue-200">Read More.</a>
+		</div>
+	  </section>
 </body>
 <script src="/javascripts/script.js"></script>
 </html>
