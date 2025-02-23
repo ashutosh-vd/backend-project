@@ -5,7 +5,6 @@ const app = express();
 
 import path from 'path'
 import { fileURLToPath } from "url";
-import { setFips } from "node:crypto";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
