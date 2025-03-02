@@ -14,8 +14,8 @@
 			Task List
 		</h1>
 	</div>
-	<section class="mb-12 mx-auto">
-		<form class="space-y-4 p-4" action="/create" method="post">
+	<section class="mb-12 flex justify-center items-center">
+		<form class="space-y-4 p-4 w-[60%]" action="/create" method="post">
 		  <div>
 			<label for="title" class="block text-sm font-medium mb-1">Title</label>
 			<input
@@ -33,7 +33,7 @@
 			  placeholder="Enter description"
 			  rows="4"
 			  name="details"
-			  class="w-full h-12 resize-none p-3 bg-zinc-800 border border-zinc-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500	"
+			  class="w-full resize-none p-3 bg-zinc-800 border border-zinc-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500	"
 			></textarea>
 		  </div>
 		  <button
@@ -49,6 +49,9 @@
 	  </div>
 
 	  <section class="p-4 flex gap-3 justify-center">
+		<% if(files.length == 0) { %>
+			<h3 class="text-zinc-600">No Tasks Yet.</h3>
+		<% } %>
 		<% files.forEach( (elem) => { %>
 			<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
 				<p class="block text-2xl"><%=elem %></p>
@@ -56,8 +59,8 @@
 			</div>
 		<% }) %>
 	  </section>
-	  <section>
-		
+	  <section class="text-white text-xl font-semibold fixed bottom-4 right-4 bg-red-500 p-3 rounded ">
+		<a href="/clear">Clear All.</a>
 	  </section>
 </body>
 <script src="/javascripts/script.js"></script>

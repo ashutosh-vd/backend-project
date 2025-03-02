@@ -37,6 +37,24 @@ app.post('/create' , (req, res) => {
 			console.log("write Error");
 		}
 	})
+	res.redirect('/')
+})
+
+app.get('/clear', (req, res) => {
+	fs.readdir(`./files`, {withFileTypes: true}, (err, files) => {
+		if(err) {
+			console.log("readdir Error")
+		}
+		files.forEach((filename) => {
+			// console.log(filename)
+			fs.rm(`./files/${filename.name}`, {force : true}, (err) => {
+				if(err) {
+					console.log("Delete Error")
+				}
+			})
+		})
+	})
+	res.redirect('/');
 })
 
 app.listen(3000, () => {
