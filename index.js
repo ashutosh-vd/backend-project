@@ -57,6 +57,26 @@ app.get('/clear', (req, res) => {
 	res.redirect('/');
 })
 
+app.get('/tasks/:filename', (req, res) => {
+	fs.readFile(`./files/${req.params.filename}`, {encoding: 'utf8'}, (err, data) => {
+		res.render('tasks.ejs', {taskdata: data, taskname: req.params.filename});
+		console.log(data)
+		if(err) {
+			console.log(err)
+		}
+	})
+})
+
+app.get('/tasks/:filename/delete_task', (req, res) => {
+	fs.rm(`./files/${req.params.filename}`, {force: true}, (err) => {
+		if(err) {
+			console.log(err);
+		}
+		res.redirect('/');
+	})
+})
+
+
 app.listen(3000, () => {
 	console.log("Server Started")
 })

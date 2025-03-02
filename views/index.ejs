@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/stylesheets/style.css">
 	<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-zinc-900 text-zinc-600 p-5 h-screen">
+<body class="bg-zinc-900 text-zinc-300 p-5 h-screen">
 	<div 
 	class="flex justify-center items-center">
 		<h1 class="block text-3xl font-semibold">
@@ -40,28 +40,31 @@
 			type="submit"
 			class="text-white w-full py-3 bg-blue-500 hover:bg-blue-600 rounded font-semibold transition-colors"
 		  >
-			Add Card
+			Create Task
 		  </button>
 		</form>
 	  </section>
 	  <div class="flex justify-center">
-		<h4 class="text-2xl text-zinc-600 font-bold">Prev tasks Here</h4>
+		<h4 class="text-2xl text-zinc-300 font-bold">Prev tasks Here</h4>
 	  </div>
 
 	  <section class="p-4 flex gap-3 justify-center">
 		<% if(files.length == 0) { %>
-			<h3 class="text-zinc-600">No Tasks Yet.</h3>
+			<h3 class="text-zinc-300">No Tasks Yet.</h3>
 		<% } %>
 		<% files.forEach( (elem) => { %>
 			<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
 				<p class="block text-2xl"><%=elem %></p>
-				<a class="block text-blue-200">Read More.</a>
+				<a class="block text-blue-200" href="/tasks/<%= elem %>">Read More.</a>
 			</div>
 		<% }) %>
 	  </section>
-	  <section class="text-white text-xl font-semibold fixed bottom-4 right-4 bg-red-500 p-3 rounded ">
-		<a href="/clear">Clear All.</a>
-	  </section>
+	  <a href="/clear">
+		<section class="text-white text-xl font-semibold fixed bottom-4 right-4 bg-red-500 p-3 rounded">
+			<p>Clear All.</p>
+		</section>
+	  </a>
+	  
 </body>
 <script src="/javascripts/script.js"></script>
 </html>

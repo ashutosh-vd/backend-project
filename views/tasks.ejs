@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EJS File 01</title>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-zinc-900 text-zinc-300 p-5 h-screen">
+	<a href="/" class="m-5 p-5 text-blue-500 text-sm">Back To Rome</a>
+	  
+	<h1 class="text-2xl font-semibold pt-2 pb-2"><%=taskname %></h1>
+	<p class="text-xl mt-2"><%=taskdata%></p>
+
+	<a href="/tasks/<%=taskname%>/delete_task">
+	<section class="text-white text-xl font-semibold fixed bottom-4 right-4 bg-red-500 p-3 rounded">
+		<p>Delete Task.</p>
+	</section>
+	</a>
+</body>
+<script src="/javascripts/script.js"></script>
+</html>
