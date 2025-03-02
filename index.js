@@ -76,6 +76,36 @@ app.get('/tasks/:filename/delete_task', (req, res) => {
 	})
 })
 
+app.get('/tasks/:filename/edit' , (req, res) => {
+	const prev_task = (req.params.filename).split('_').join(" ").slice(0, -4);
+	fs.readFile(`./files/${req.params.filename}`, {encoding: 'utf8'}, (err, prev_content) => {	
+		res.render('edit.ejs', {
+			taskname: req.params.filename,
+			prev_task: prev_task,
+			prev_task_content: prev_content
+		});
+		console.log(prev_content)
+		console.log(prev_task)
+		if(err) {
+			throw err;
+		}
+	})
+
+})
+
+app.post('/:filename/edit_content', (req, res) => {
+	const edited_title = `${req.body.title.split(' ').join('_')}.txt`;
+	const edited_content = req.body.details;
+	fs.rename(`./files/${req.params.filename}`, `./files/${edited_title}`, (err) => {
+		if(err) {
+			throw err;
+		}
+		fs.writeFile(`./files/${edited_title}`, edited_content, {encoding: 'utf8'}, (err) => {
+			//if(err) throw err;
+			res.redirect('/')
+		})
+	})
+})
 
 app.listen(3000, () => {
 	console.log("Server Started")

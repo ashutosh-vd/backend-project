@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EJS File 01</title>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-zinc-900 text-zinc-300 p-5 h-screen">
+	<a href="/" class="m-5 p-5 text-blue-500 text-sm">Back To Rome</a>
+	  
+	<h1 class="text-2xl font-semibold pt-2 pb-2">Edit Task.</h1>
+	<form class="space-y-4 p-4 w-[60%]" action="/<%=taskname %>/edit_content" method="post">
+		<div>
+			<label for="title" class="block text-sm font-medium mb-1">Title</label>
+		  <input
+			type="text"
+			id="title"
+			placeholder="Enter title"
+			name="title"
+			class="w-full p-3 bg-zinc-800 border border-zinc-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+			value= "<%=prev_task %>"
+		  />
+		</div>
+		<div>
+		  <label for="description" class="block text-sm font-medium mb-1">Description</label>
+		  <textarea
+			id="description"
+			placeholder="Enter description"
+			rows="4"
+			name="details"
+			class="w-full resize-none p-3 bg-zinc-800 border border-zinc-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500	"
+		  ><%=prev_task_content %></textarea>
+		</div>
+		<button
+		  type="submit"
+		  class="text-white w-full py-3 bg-yellow-500 hover:bg-yellow-600 rounded font-semibold transition-colors"
+		>
+		  Update Task
+		</button>
+	  </form>
+
+	<a href="/tasks/<%=taskname%>/delete_task">
+	<section class="text-white text-xl font-semibold fixed bottom-4 right-4 bg-red-500 p-3 rounded">
+		<p>Delete Task.</p>
+	</section>
+	</a>
+</body>
+<script src="/javascripts/script.js"></script>
+</html>

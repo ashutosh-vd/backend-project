@@ -53,9 +53,12 @@
 			<h3 class="text-zinc-300">No Tasks Yet.</h3>
 		<% } %>
 		<% files.forEach( (elem) => { %>
-			<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500">
+			<div class="border rounded bg-zinc-800 px-3 py-4 min-h-40 ring-2 ring-blue-500 flex flex-col">
 				<p class="block text-2xl"><%=elem %></p>
-				<a class="block text-blue-200" href="/tasks/<%= elem %>">Read More.</a>
+				<div class="flex justify-between mt-auto">
+					<a class="block text-blue-200" href="/tasks/<%= elem %>">Read More.</a>
+					<a href="/tasks/<%=elem %>/edit">edit</a>
+				</div>
 			</div>
 		<% }) %>
 	  </section>
