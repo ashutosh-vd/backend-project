@@ -84,8 +84,8 @@ app.get('/tasks/:filename/edit' , (req, res) => {
 			prev_task: prev_task,
 			prev_task_content: prev_content
 		});
-		console.log(prev_content)
-		console.log(prev_task)
+		// console.log(prev_content)
+		// console.log(prev_task)
 		if(err) {
 			throw err;
 		}
